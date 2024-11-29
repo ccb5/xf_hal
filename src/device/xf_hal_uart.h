@@ -17,9 +17,11 @@
 #include "xf_hal_device_config.h"
 
 /**
- * @ingroup group_xf_hal_user
+ * @cond XFAPI_USER
+ * @ingroup group_xf_hal
  * @defgroup group_xf_hal_user_uart uart
  * @brief 通用异步收发器。
+ * @endcond
  * @{
  */
 

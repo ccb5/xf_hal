@@ -17,9 +17,11 @@
 #include "xf_hal_kernel_config.h"
 
 /**
- * @ingroup group_xf_hal_internal
+ * @cond XFAPI_INTERNAL
+ * @ingroup group_xf_hal
  * @defgroup group_xf_hal_internal_device device
  * @brief 设备抽象。
+ * @endcond
  * @{
  */
 

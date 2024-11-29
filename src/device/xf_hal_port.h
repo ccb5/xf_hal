@@ -27,7 +27,11 @@ extern "C" {
 /* ==================== [Global Prototypes] ================================= */
 
 /**
- * @addtogroup group_xf_hal_port
+ * @cond XFAPI_PORT
+ * @ingroup group_xf_hal
+ * @defgroup group_xf_hal_port porting
+ * @brief xf_hal 对接接口。
+ * @endcond
  * @{
  */
 

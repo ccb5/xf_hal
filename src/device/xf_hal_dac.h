@@ -17,9 +17,11 @@
 #include "xf_hal_device_config.h"
 
 /**
- * @ingroup group_xf_hal_user
+ * @cond XFAPI_USER
+ * @ingroup group_xf_hal
  * @defgroup group_xf_hal_user_dac dac
  * @brief 数字模拟转换器。
+ * @endcond
  * @{
  */
 

@@ -11,35 +11,13 @@
  */
 
 /**
+ * @cond (XFAPI_USER || XFAPI_PORT || XFAPI_INTERNAL)
  * @defgroup group_xf_hal xf_hal
  * @brief xf_hal (硬件抽象层) 允许在不同硬件平台上使用同样的硬件功能。
  *
  * 如 gpio, adc, dac, uart, i2c, spi, timer 等等。
  *
- */
-
-/**
- * @ingroup group_xf_hal
- * @defgroup group_xf_hal_user 用户接口
- * @brief 调用具体功能的接口。如初始化、配置、输入输出等。
- *
- * xfusion 用户使用 xf_hal 时只需 `#include "xf_hal.h"` 即可。
- *
- */
-
-/**
- * @ingroup group_xf_hal
- * @defgroup group_xf_hal_port 移植接口
- * @brief 用于对接具体硬件驱动到 xf_hal 中的接口。
- *
- * 对接 xf_hal 时只需 `#include "xf_hal_port.h"` 即可。
- *
- */
-
-/**
- * @ingroup group_xf_hal
- * @defgroup group_xf_hal_internal 内部接口
- * @brief 组件内部实现某些功能时定义的接口。用户不一定需要。
+ * @endcond
  */
 
 /* ==================== [Includes] ========================================== */
