@@ -170,7 +170,6 @@ static int port_i2c_read(xf_hal_dev_t *dev, void *buf, size_t count)
         return -1;
     }
 
-
     if (i2c_config->hosts == XF_HAL_I2C_HOSTS_MASTER) {
         _i2c_master_read_from_dev(i2c->port, i2c_config->address, buf, count,
                                   i2c_config->timeout_ms);
@@ -187,11 +186,9 @@ static int port_i2c_write(xf_hal_dev_t *dev, const void *buf, size_t count)
     port_i2c_t *i2c = (port_i2c_t *)dev->platform_data;
     xf_hal_i2c_config_t *i2c_config = (xf_hal_i2c_config_t *)i2c->config;
 
-
     if (i2c_config->mem_addr_en !=  XF_HAL_I2C_MEM_ADDR_DISABLE) {
         return -1;
     }
-
 
     if (i2c_config->hosts == XF_HAL_I2C_HOSTS_MASTER) {
         _i2c_master_write_to_dev(i2c->port, i2c_config->address, buf, count,

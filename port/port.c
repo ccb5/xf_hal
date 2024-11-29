@@ -1,12 +1,12 @@
 /**
  * @file port.c
  * @author cangyu (sky.kirto@qq.com)
- * @brief 
+ * @brief
  * @version 0.1
  * @date 2024-07-03
- * 
+ *
  * @copyright Copyright (c) 2024, CorAL. All rights reserved.
- * 
+ *
  */
 
 /* ==================== [Includes] ========================================== */

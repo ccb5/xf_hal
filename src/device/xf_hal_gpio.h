@@ -200,7 +200,7 @@ xf_err_t xf_hal_gpio_set_speed(xf_gpio_num_t gpio_num, uint32_t speed);
 
 /**
  * @brief gpio 设置中断回调。
- * 
+ *
  * @attention cb 和 isr 相比，中断回调(cb)是使用任务进行异步的回调，
  *            此回调可以进行打印等操作，但是实时性不会很好。
  *
@@ -216,7 +216,7 @@ xf_err_t xf_hal_gpio_set_intr_cb(xf_gpio_num_t gpio_num, xf_hal_gpio_irq_cb_t ca
 
 /**
  * @brief gpio 设置中断服务。
- * 
+ *
  * @attention isr 和 cb 相比，中断服务(isr)运行在中断函数内，
  *            此回调不要打印，但是实时性会更高。
  *

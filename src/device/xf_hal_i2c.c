@@ -40,7 +40,6 @@ static xf_hal_dev_t *i2c_constructor(xf_i2c_num_t i2c_num);
 #define XF_HAL_I2C_CHECK(condition, retval,  format, ...) \
     XF_CHECK(condition, retval, TAG, format, ##__VA_ARGS__)
 
-
 /* ==================== [Global Functions] ================================== */
 
 xf_err_t xf_hal_i2c_register(const xf_driver_ops_t *driver_ops)
@@ -160,7 +159,7 @@ xf_err_t xf_hal_i2c_set_gpio(xf_i2c_num_t i2c_num, xf_gpio_num_t scl_num, xf_gpi
     xf_lock_unlock(dev_i2c->dev.mutex);
 #endif
 
-    err = xf_hal_driver_ioctl(dev, XF_HAL_I2C_CMD_SCL_NUM | XF_HAL_I2C_CMD_SDA_NUM , &dev_i2c->config);
+    err = xf_hal_driver_ioctl(dev, XF_HAL_I2C_CMD_SCL_NUM | XF_HAL_I2C_CMD_SDA_NUM, &dev_i2c->config);
     XF_HAL_I2C_CHECK(err, err, "i2c set gpio failed!");
 
     return XF_OK;
@@ -243,7 +242,7 @@ xf_err_t xf_hal_i2c_set_mem_addr_width(xf_i2c_num_t i2c_num, xf_hal_i2c_mem_addr
 }
 
 int xf_hal_i2c_write_mem(xf_i2c_num_t i2c_num, uint32_t mem_addr, const uint8_t *buffer, uint32_t size,
-                              uint32_t timeout_ms)
+                         uint32_t timeout_ms)
 {
     xf_err_t err = XF_OK;
     UNUSED(err);
@@ -252,7 +251,8 @@ int xf_hal_i2c_write_mem(xf_i2c_num_t i2c_num, uint32_t mem_addr, const uint8_t 
     xf_hal_i2c_t *dev_i2c = (xf_hal_i2c_t *)dev;
     XF_HAL_I2C_CHECK(!dev_i2c, XF_ERR_UNINIT, "i2c is not init!");
 
-    if (dev_i2c->config.mem_addr != mem_addr || dev_i2c->config.mem_addr_en != true || dev_i2c->config.timeout_ms != timeout_ms) {
+    if (dev_i2c->config.mem_addr != mem_addr || dev_i2c->config.mem_addr_en != true
+            || dev_i2c->config.timeout_ms != timeout_ms) {
 
 #if XF_HAL_LOCK_IS_ENABLE
         xf_lock_lock(dev_i2c->dev.mutex);
@@ -266,7 +266,8 @@ int xf_hal_i2c_write_mem(xf_i2c_num_t i2c_num, uint32_t mem_addr, const uint8_t 
         xf_lock_unlock(dev_i2c->dev.mutex);
 #endif
 
-        err = xf_hal_driver_ioctl(dev, XF_HAL_I2C_CMD_MEM_ADDR | XF_HAL_I2C_CMD_MEM_ADDR_EN | XF_HAL_I2C_CMD_TIMEOUT, &dev_i2c->config);
+        err = xf_hal_driver_ioctl(dev, XF_HAL_I2C_CMD_MEM_ADDR | XF_HAL_I2C_CMD_MEM_ADDR_EN | XF_HAL_I2C_CMD_TIMEOUT,
+                                  &dev_i2c->config);
         XF_HAL_I2C_CHECK(err, err, "write memory address failed!");
     }
 
@@ -285,7 +286,8 @@ int xf_hal_i2c_read_mem(xf_i2c_num_t i2c_num, uint32_t mem_addr, uint8_t *buffer
     xf_hal_i2c_t *dev_i2c = (xf_hal_i2c_t *)dev;
     XF_HAL_I2C_CHECK(!dev_i2c, XF_ERR_UNINIT, "i2c is not init!");
 
-    if (dev_i2c->config.mem_addr != mem_addr || dev_i2c->config.mem_addr_en != true || dev_i2c->config.timeout_ms != timeout_ms) {
+    if (dev_i2c->config.mem_addr != mem_addr || dev_i2c->config.mem_addr_en != true
+            || dev_i2c->config.timeout_ms != timeout_ms) {
 
 #if XF_HAL_LOCK_IS_ENABLE
         xf_lock_lock(dev_i2c->dev.mutex);
@@ -299,7 +301,8 @@ int xf_hal_i2c_read_mem(xf_i2c_num_t i2c_num, uint32_t mem_addr, uint8_t *buffer
         xf_lock_unlock(dev_i2c->dev.mutex);
 #endif
 
-        err = xf_hal_driver_ioctl(dev, XF_HAL_I2C_CMD_MEM_ADDR | XF_HAL_I2C_CMD_MEM_ADDR_EN | XF_HAL_I2C_CMD_TIMEOUT, &dev_i2c->config);
+        err = xf_hal_driver_ioctl(dev, XF_HAL_I2C_CMD_MEM_ADDR | XF_HAL_I2C_CMD_MEM_ADDR_EN | XF_HAL_I2C_CMD_TIMEOUT,
+                                  &dev_i2c->config);
         XF_HAL_I2C_CHECK(err, err, "read memory address failed!");
     }
 

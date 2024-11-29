@@ -65,7 +65,6 @@ static void xf_hal_tim_event_cb(xf_tim_num_t tim_num, uint32_t ticks, void *user
 /* ==================== [Macros] ============================================ */
 #define XF_HAL_TIM_UNUSED(x)   (void)(x)
 
-
 /* ==================== [Global Functions] ================================== */
 
 void xf_hal_TIM_reg(void)
@@ -217,4 +216,3 @@ static void xf_hal_tim_event_cb(xf_tim_num_t tim_num, uint32_t ticks, void *user
     XF_HAL_TIM_UNUSED(ticks);
     XF_HAL_TIM_UNUSED(user_data);
 }
-
