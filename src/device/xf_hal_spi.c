@@ -37,7 +37,6 @@ static xf_hal_dev_t *spi_constructor(xf_spi_num_t spi_num);
 
 /* ==================== [Macros] ============================================ */
 
-
 #define XF_HAL_SPI_CHECK(condition, retval,  format, ...) \
     XF_CHECK(condition, retval, TAG, format, ##__VA_ARGS__)
 
@@ -359,7 +358,7 @@ int xf_hal_spi_read(xf_spi_num_t spi_num, uint8_t *buffer, uint32_t size, uint32
 
     if (dev_spi->config.timeout_ms != timeout_ms) {
 #if XF_HAL_LOCK_IS_ENABLE
-    xf_lock_lock(dev_spi->dev.mutex);
+        xf_lock_lock(dev_spi->dev.mutex);
 #endif
 
         dev_spi->config.timeout_ms = timeout_ms;
@@ -367,7 +366,7 @@ int xf_hal_spi_read(xf_spi_num_t spi_num, uint8_t *buffer, uint32_t size, uint32
         XF_HAL_SPI_CHECK(err, err, "set timeout_ms failed!");
 
 #if XF_HAL_LOCK_IS_ENABLE
-    xf_lock_unlock(dev_spi->dev.mutex);
+        xf_lock_unlock(dev_spi->dev.mutex);
 #endif
     }
 

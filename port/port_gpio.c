@@ -133,7 +133,6 @@ static int port_gpio_ioctl(xf_hal_dev_t *dev, uint32_t cmd, void *config)
         gpio_config->isr.user_data  = XF_HAL_GPIO_DEFAULT_USER_DATA;
     }
 
-
     return 0;
 }
 

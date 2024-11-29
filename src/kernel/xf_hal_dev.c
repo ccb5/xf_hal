@@ -68,7 +68,6 @@ uint32_t xf_hal_driver_get_flag(xf_hal_type_t type)
 {
     XF_ASSERT(type < DEV_TABLE_SIZE && type >= 0, _XF_HAL_FLAG_NOT_USE, TAG, "type must between 0 and %d", DEV_TABLE_SIZE);
 
-
     uint32_t flag = dev_table[type].flag;
 
     return flag;

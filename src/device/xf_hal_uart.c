@@ -29,7 +29,6 @@ typedef struct _xf_hal_uart_t {
     xf_hal_uart_config_t config;
 } xf_hal_uart_t;
 
-
 /* ==================== [Static Prototypes] ================================= */
 
 static xf_hal_dev_t *uart_constructor(xf_uart_num_t uart_num);
@@ -167,7 +166,7 @@ xf_err_t xf_hal_uart_set_gpio(xf_uart_num_t uart_num, xf_gpio_num_t tx_num,
 }
 
 xf_err_t xf_hal_uart_set_config(xf_uart_num_t uart_num, xf_hal_uart_data_bits_t data_bits,
-                             xf_hal_uart_stop_bits_t stop_bits, xf_hal_uart_parity_bits_t parity_bits)
+                                xf_hal_uart_stop_bits_t stop_bits, xf_hal_uart_parity_bits_t parity_bits)
 {
     xf_err_t err = XF_OK;
     UNUSED(err);
@@ -240,7 +239,7 @@ uint32_t xf_hal_uart_get_baudrate(xf_uart_num_t uart_num)
 }
 
 xf_err_t xf_hal_uart_set_flow_control(xf_uart_num_t uart_num, xf_hal_uart_flow_control_t flow_control,
-                                  xf_gpio_num_t rts_num, xf_gpio_num_t cts_num)
+                                      xf_gpio_num_t rts_num, xf_gpio_num_t cts_num)
 {
     xf_err_t err = XF_OK;
     UNUSED(err);
@@ -261,7 +260,8 @@ xf_err_t xf_hal_uart_set_flow_control(xf_uart_num_t uart_num, xf_hal_uart_flow_c
     xf_lock_unlock(dev_uart->dev.mutex);
 #endif
 
-    err = xf_hal_driver_ioctl(dev, XF_HAL_UART_CMD_FLOW_CONTROL | XF_HAL_UART_CMD_RTS_NUM | XF_HAL_UART_CMD_CTS_NUM, &dev_uart->config);
+    err = xf_hal_driver_ioctl(dev, XF_HAL_UART_CMD_FLOW_CONTROL | XF_HAL_UART_CMD_RTS_NUM | XF_HAL_UART_CMD_CTS_NUM,
+                              &dev_uart->config);
     XF_HAL_UART_CHECK(err, err, "uart baudrate failed!");
 
     return XF_OK;
@@ -271,7 +271,6 @@ int xf_hal_uart_read(xf_uart_num_t uart_num, uint8_t *data, uint32_t data_len)
 {
     xf_err_t err = XF_OK;
     UNUSED(err);
-    
 
     xf_hal_dev_t *dev = xf_hal_device_find(XF_HAL_UART_TYPE, uart_num);
     xf_hal_uart_t *dev_uart = (xf_hal_uart_t *)dev;

@@ -17,9 +17,11 @@
 #include "xf_hal_kernel_config.h"
 
 /**
- * @ingroup group_xf_hal_internal
+ * @cond XFAPI_INTERNAL
+ * @ingroup group_xf_hal
  * @defgroup group_xf_hal_internal_posix posix
  * @brief (暂未使用)基于 xf_hal_driver 的 posix 实现。
+ * @endcond
  * @{
  */
 

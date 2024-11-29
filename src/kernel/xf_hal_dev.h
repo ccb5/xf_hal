@@ -17,9 +17,11 @@
 #include "xf_hal_kernel_config.h"
 
 /**
- * @ingroup group_xf_hal_internal
+ * @cond XFAPI_INTERNAL
+ * @ingroup group_xf_hal
  * @defgroup group_xf_hal_internal_device device
  * @brief 设备抽象。
+ * @endcond
  * @{
  */
 
@@ -37,7 +39,7 @@ extern "C" {
 typedef struct _xf_hal_dev_t xf_hal_dev_t;
 
 typedef enum _xf_hal_type_t {
-		XF_HAL_TYPE_NONE = -1,
+    XF_HAL_TYPE_NONE = -1,
 #define XF_HAL_TABLE_TYPE
 #include "../device/xf_hal_reg_table.inc"
     XF_HAL_TYPE_MAX

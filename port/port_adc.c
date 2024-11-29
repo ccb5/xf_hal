@@ -30,7 +30,6 @@ typedef struct _port_adc_t {
     const char *config2;
 } port_adc_t;
 
-
 /* ==================== [Static Prototypes] ================================= */
 
 // 用户实现对接的部分
@@ -69,7 +68,6 @@ void xf_hal_ADC_reg(void)
     };
     xf_hal_adc_register(&ops);
 }
-
 
 /* ==================== [Static Functions] ================================== */
 static int port_adc_open(xf_hal_dev_t *dev)
@@ -166,7 +164,6 @@ static void _adc_set_sample_rate(uint32_t adc_port, uint32_t sample_rate)
 {
     printf("\nadc set sample rate: %d!\n", sample_rate);
 }
-
 
 static void _adc_enable(uint32_t adc_port, const char *config1,
                         const char *config2)

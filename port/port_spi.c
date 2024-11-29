@@ -103,7 +103,6 @@ void xf_hal_SPI_reg(void)
     xf_hal_spi_register(&ops);
 }
 
-
 /* ==================== [Static Functions] ================================== */
 
 static int port_spi_open(xf_hal_dev_t *dev)
@@ -219,7 +218,6 @@ static int spi_device_polling_transmit(uint32_t spi_port, const void *tx_buffer,
     if (rx_buffer != NULL) {
         strncpy((char *)rx_buffer, buffer, length);
     }
-
 
     if (tx_buffer != NULL) {
         printf("write:%s\n", (const char *)tx_buffer);

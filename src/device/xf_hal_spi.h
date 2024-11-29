@@ -17,9 +17,11 @@
 #include "xf_hal_device_config.h"
 
 /**
- * @ingroup group_xf_hal_user
+ * @cond XFAPI_USER
+ * @ingroup group_xf_hal
  * @defgroup group_xf_hal_user_spi spi
  * @brief 串行外设接口。
+ * @endcond
  * @{
  */
 
@@ -295,7 +297,7 @@ xf_err_t xf_hal_spi_set_bit_order(xf_spi_num_t spi_num, xf_hal_spi_bit_order_t b
 
 /**
  * @brief 设置 spi 模式。
- * 
+ *
  * 与时钟极性（CPOL）和时钟相位（CPHA）有关
  *
  * @param spi_num spi 的序号。

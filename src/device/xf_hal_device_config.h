@@ -22,49 +22,49 @@ extern "C" {
 
 /* ==================== [Defines] =========================================== */
 
-#if (!defined(XF_HAL_GPIO_ENABLE)) || (XF_HAL_GPIO_ENABLE)
+#if (!defined(XF_HAL_GPIO_ENABLE)) || (XF_HAL_GPIO_ENABLE) || defined(__DOXYGEN__)
 #   define XF_HAL_GPIO_IS_ENABLE    (1)
 #else
 #   define XF_HAL_GPIO_IS_ENABLE    (0)
 #endif
 
-#if (!defined(XF_HAL_PWM_ENABLE)) || (XF_HAL_PWM_ENABLE)
+#if (!defined(XF_HAL_PWM_ENABLE)) || (XF_HAL_PWM_ENABLE) || defined(__DOXYGEN__)
 #   define XF_HAL_PWM_IS_ENABLE     (1)
 #else
 #   define XF_HAL_PWM_IS_ENABLE     (0)
 #endif
 
-#if (!defined(XF_HAL_TIM_ENABLE)) || (XF_HAL_TIM_ENABLE)
+#if (!defined(XF_HAL_TIM_ENABLE)) || (XF_HAL_TIM_ENABLE) || defined(__DOXYGEN__)
 #   define XF_HAL_TIM_IS_ENABLE     (1)
 #else
 #   define XF_HAL_TIM_IS_ENABLE     (0)
 #endif
 
-#if (!defined(XF_HAL_UART_ENABLE)) || (XF_HAL_UART_ENABLE)
+#if (!defined(XF_HAL_UART_ENABLE)) || (XF_HAL_UART_ENABLE) || defined(__DOXYGEN__)
 #   define XF_HAL_UART_IS_ENABLE    (1)
 #else
 #   define XF_HAL_UART_IS_ENABLE    (0)
 #endif
 
-#if (!defined(XF_HAL_I2C_ENABLE)) || (XF_HAL_I2C_ENABLE)
+#if (!defined(XF_HAL_I2C_ENABLE)) || (XF_HAL_I2C_ENABLE) || defined(__DOXYGEN__)
 #   define XF_HAL_I2C_IS_ENABLE     (1)
 #else
 #   define XF_HAL_I2C_IS_ENABLE     (0)
 #endif
 
-#if (!defined(XF_HAL_SPI_ENABLE)) || (XF_HAL_SPI_ENABLE)
+#if (!defined(XF_HAL_SPI_ENABLE)) || (XF_HAL_SPI_ENABLE) || defined(__DOXYGEN__)
 #   define XF_HAL_SPI_IS_ENABLE     (1)
 #else
 #   define XF_HAL_SPI_IS_ENABLE     (0)
 #endif
 
-#if (!defined(XF_HAL_ADC_ENABLE)) || (XF_HAL_ADC_ENABLE)
+#if (!defined(XF_HAL_ADC_ENABLE)) || (XF_HAL_ADC_ENABLE) || defined(__DOXYGEN__)
 #   define XF_HAL_ADC_IS_ENABLE     (1)
 #else
 #   define XF_HAL_ADC_IS_ENABLE     (0)
 #endif
 
-#if (!defined(XF_HAL_DAC_ENABLE)) || (XF_HAL_DAC_ENABLE)
+#if (!defined(XF_HAL_DAC_ENABLE)) || (XF_HAL_DAC_ENABLE) || defined(__DOXYGEN__)
 #   define XF_HAL_DAC_IS_ENABLE     (1)
 #else
 #   define XF_HAL_DAC_IS_ENABLE     (0)

@@ -28,7 +28,6 @@ typedef struct _port_pwm_t {
     const char *config2;
 } port_pwm_t;
 
-
 /* ==================== [Static Prototypes] ================================= */
 
 // 用户实现对接的部分
@@ -118,7 +117,6 @@ static int port_pwm_ioctl(xf_hal_dev_t *dev, uint32_t cmd, void *config)
         pwm_config->duty = XF_HAL_PWM_DEFAULT_DUTY_US;
         pwm_config->enable = XF_HAL_PWM_DEFAULT_ENABLE;
     }
-
 
     return 0;
 }
